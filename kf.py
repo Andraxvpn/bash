@@ -73,6 +73,13 @@ def check_for_update():
     except Exception as e:
         sprint(error + f"Failed to check for updates: {e}")
 
+
+# Function to update the script from the GitHub repository
+def update():
+    os.system("git pull origin main")  # Assuming the branch is 'main' on GitHub
+    sprint(success + "Update successful. Restarting the script.")
+    os.execv(sys.executable, [sys.executable] + sys.argv)
+
 # Normal slowly printer
 def sprint(sentence, second=0.05):
     for word in sentence + '\n':
