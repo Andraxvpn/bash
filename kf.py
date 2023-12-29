@@ -242,31 +242,36 @@ def main():
     print(f"{green}[0]{yellow} Exit")
     print(f"{green}[10]{yellow} update")
     choose = input(f"{ask}{blue}Choose an option : {cyan}")
-    while True:
-        if choose == "1" or choose=="01":
-            encryptsh()
-        elif choose == "2" or choose=="02":
-            decryptsh()
-        elif choose == "3" or choose=="03":
-            encryptvar()
-        elif choose == "4" or choose=="04":
-            encryptem()
-        elif choose == "5" or choose=="05":
-            if os.path.exists("/data/data/com.termux/files/home"):
-                os.system("xdg-open --view 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
-            else:
-                os.system("xdg-open 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
-            main()
-        elif choose == "6" or choose=="06":
-            about()
-        elif choose == "0":
-            exit()
+    # ...
+
+while True:
+    if choose == "1" or choose=="01":
+        encryptsh()
+    elif choose == "2" or choose=="02":
+        decryptsh()
+    elif choose == "3" or choose=="03":
+        encryptvar()
+    elif choose == "4" or choose=="04":
+        encryptem()
+    elif choose == "5" or choose=="05":
+        if os.path.exists("/data/data/com.termux/files/home"):
+            os.system("xdg-open --view 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
         else:
-            sprint(error+'Wrong input!')
-            os.system("sleep 2")
-            main()
-            elif choose == "10" or choose=="10":
-            check_for_update()
+            os.system("xdg-open 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
+        main()
+    elif choose == "6" or choose=="06":
+        about()
+    elif choose == "0":
+        exit()
+    elif choose == "10" or choose=="10":
+        check_for_update()
+    else:
+        sprint(error+'Wrong input!')
+        os.system("sleep 2")
+        main()
+
+# ...
+
 
 if __name__ == '__main__':
     try:
