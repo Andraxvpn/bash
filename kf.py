@@ -1,7 +1,7 @@
 # -*- coding: UTF-8 -*-
 
 # K-fuscator
-# Author  : KasRoudra
+# Author  : ANDRAX
 # Github  : https://github.com/andraxvpn
 # Contact : https://t.me/andraxv6001
 # Language: Python(3)
@@ -9,7 +9,7 @@
 
 # Encrypt(obfuscate) or decrypt bash script or compile python script
 
-import os, base64, sys, time
+import os, base64, sys, time, requests
 from pprint import pformat
 
 # Emoji unicode list
@@ -273,3 +273,32 @@ if __name__ == '__main__':
         exit()
     except Exception as e:
         sprint(error+str(e))
+# ...
+
+# Function to check for updates
+def check_for_update():
+    current_version = "1.0"  # Ganti dengan versi yang sesuai
+    update_url = "https://raw.githubusercontent.com/Andraxvpn/bash/main/version.txt"
+
+    try:
+        response = requests.get(update_url)
+        new_version = response.text.strip()
+
+        if new_version > current_version:
+            print(info + f"A new version ({new_version}) is available.")
+            update_choice = input(ask + "Do you want to update? (y/n) > ")
+
+            if update_choice.lower() == 'y':
+                update_script_url = "https://raw.githubusercontent.com/Andraxvpn/bash/main/kf.py"  # Ganti dengan URL script terbaru
+                updated_script = requests.get(update_script_url).text
+
+                with open(__file__, 'w') as script_file:
+                    script_file.write(updated_script)
+
+                print(success + "Update successful. Please restart the script.")
+                exit()
+
+    except Exception as e:
+        print(error + f"Error checking for updates: {str(e)}")
+
+# ...
