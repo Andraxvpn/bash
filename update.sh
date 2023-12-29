@@ -1,15 +1,23 @@
 #!/bin/bash
 
-# Ganti dengan jalur direktori skrip Anda
-SCRIPT_DIR="/data/data/com.termux/files/home"
+# Ganti 'Andraxvpn', 'bash', dan 'main' dengan informasi A>
+username="Andraxvpn"
+repository="bash"
+branch="main"
 
-# Ganti dengan URL repositori GitHub Anda
-REPO_URL="https://github.com/Andraxvpn/bash"
+# Direktori lokal repositori
+local_directory="/data/data/termux/home/${repository}"
 
-cd "$SCRIPT_DIR" || exit 1
+# Pindah ke direktori repositori
+cd "${local_directory}" || exit
 
-# Mengambil pembaruan terbaru dari repositori GitHub
-git pull "$REPO_URL"
+# Lakukan fetch untuk mendapatkan perubahan terbaru dari r>
+git fetch
 
-echo "Skrip berhasil diperbarui."
+# Pindah ke branch utama (misalnya, 'main' atau 'master')
+git checkout "${branch}"
 
+# Tarik perubahan terbaru
+git pull
+
+echo "Repositori ${username}/${repository} berhasil diperb>
