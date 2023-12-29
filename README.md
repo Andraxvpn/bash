@@ -1,6 +1,6 @@
 # K-fuscator
 
-### [+] Created By <a href="https://github.com/KasRoudra">KasRoudra</a>
+### [+] Created By <a href="https://github.com/Andraxvpn">Andraxvpn</a>
 
 ### [+] Decription :
 ***K-fuscator is a tool to encrypt(obfuscate) or decrypt bash/shell script or compile python script. Compilation is available in variable or emoji.***
@@ -9,7 +9,7 @@
 
 ```apt install git python -y```
 
-```git clone https://github.com/KasRoudra/k-fuscator```
+```git clone https://github.com/Andraxvpn/bash```
 
 ```cd k-fuscator```
 
@@ -20,7 +20,7 @@
 
 ### Or, Use Single Command
 ```
-apt install git python -y && git clone https://github.com/KasRoudra/k-fuscator && cd k-fuscator && bash requirements.sh && python3 kf.py
+apt install git python -y && git clone https://github.com/Andraxvpn/bash && cd k-fuscator && bash requirements.sh && python3 kf.py
 ```
 
 ### Features:
@@ -62,9 +62,4 @@ apt install git python -y && git clone https://github.com/KasRoudra/k-fuscator &
 
 ### Credits: <a href="https://github.com/H3LLO-H4CK3R-2/Bash-Encrypt">H3LL0-H4CK3R</a> and <a href="https://github.com/wodxgod/Simple-obfuscator">WodxGod</a> and <a href="https://github.com/chris-rands/emojify">Chris-Rands</a> 
 
-## [+] Find Me on :
-<ul>
-<li><a href="https://facebook.com/KasRoudra"><img src="https://github.com/KasRoudra/kasweb/raw/main/assets/facebook.png" alt="facebook" width="20px" height="20px"></a></li>
-<li><a href="https://m.me/KasRoudra"><img src="https://github.com/KasRoudra/kasweb/raw/main/assets/messenger.png" alt="messenger" width="20px" height="20px"></a></li>
-<li><a href="mailto:kasroudrard@gmail.com"><img src="https://github.com/KasRoudra/kasweb/raw/main/assets/gmail.png" alt="email" width="20px" height="20px"></a></li>
-</ul>
+
