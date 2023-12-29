@@ -3,7 +3,7 @@
 # K-fuscator
 # Author  : ANDRAX
 # Github  : https://github.com/Andraxvpn
-# Contact : https://m.me/KasRoudra
+# Contact : https://t.me/andraxv6001
 # Language: Python(3)
 # Date    : 20-12-2023
 
@@ -96,7 +96,7 @@ def about():
     print(f"{cyan}[Version]   {purple} :[1.0]")
     print(f"{cyan}[Author]    {purple} :[ANDRAX]")
     print(f"{cyan}[Github]    {purple} :[https://github.com/Andraxvpn]")
-    print(f"{cyan}[Messenger] {purple} :[https://m.me/KasRoudra]")
+    print(f"{cyan}[Messenger] {purple} :[https://t.me/andraxv6001]")
     print(f"{cyan}[Email]     {purple} :[andraxvpn@gmail.com]\n")
     print(f"{cyan}[GitHub Repo] {purple} : {GITHUB_REPO_URL}")
 
