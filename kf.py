@@ -2,14 +2,14 @@
 
 # K-fuscator
 # Author  : ANDRAX
-# Github  : https://github.com/andraxvpn
-# Contact : https://t.me/andraxv6001
+# Github  : https://github.com/Andraxvpn
+# Contact : https://m.me/KasRoudra
 # Language: Python(3)
-# Date    : 12 December 2023
+# Date    : 20-12-2023
 
 # Encrypt(obfuscate) or decrypt bash script or compile python script
 
-import os, base64, sys, time, requests
+import os, base64, sys, time, subprocess
 from pprint import pformat
 
 # Emoji unicode list
@@ -50,16 +50,35 @@ pwd=os.getcwd()
 
 # Logo of K-fuscator
 logo=f'''
-{green}     #    #     # ######  ######     #    #     # 
-{yellow}   # #   ##    # #     # #     #   # #    #   #  
-{yellow}  #   #  # #   # #     # #     #  #   #    # #   
-{purple} #     # #  #  # #     # ######  #     #    #    
-{red} ####### #   # # #     # #   #   #######   # #   
-{red} #     # #    ## #     # #    #  #     #  #   #  
-{cyan} #     # #     # ######  #     # #     # #     # 
-                                                                              
+{green} _  __     _____                    _
+{yellow}| |/ /    |  ___|   _ ___  ___ __ _| |_ ___  _ __
+{red}| ' /_____| |_ | | | / __|/ __/ _' | __/ _ \| '__|
+{blue}| . \_____|  _|| |_| \__ \ (_| (_| | || (_) | |
+{cyan}|_|\_\    |_|   \__,_|___/\___\__,_|\__\___/|_|
+{purple}                                 [By ANDRAX]
 
 '''
+ # update
+
+def update():
+    os.system("git pull origin main")  # Assuming the branch is 'main' on GitHub
+    sprint(success + "Update successful. Restarting the script.")
+    os.execv(sys.executable, [sys.executable] + sys.argv)
+    
+
+# GITHUB_REPO_URL
+GITHUB_REPO_URL = "https://github.com/Andraxvpn/bash"
+
+# cek_update
+def check_for_update():
+    try:
+        subprocess.check_output(["git", "remote", "update"])
+        if subprocess.check_output(["git", "status", "-uno"]).decode("utf-8") == "":
+            sprint(info + "You have the latest version.")
+        else:
+            sprint(info + "A new version is available. Run 'git pull' to update.")
+    except Exception as e:
+        sprint(error + f"Failed to check for updates: {e}")
 
 # Normal slowly printer
 def sprint(sentence, second=0.05):
@@ -74,10 +93,12 @@ def about():
     sprint(logo, 0.01)
     print(f"{cyan}[ToolName]  {purple} :[K-fuscator]")
     print(f"{cyan}[Version]   {purple} :[1.0]")
-    print(f"{cyan}[Author]    {purple} :[ANDRAX]")
+    print(f"{cyan}[Author]    {purple} :[KasRoudra]")
     print(f"{cyan}[Github]    {purple} :[https://github.com/Andraxvpn]")
-    print(f"{cyan}[Messenger] {purple} :[https://t.me/andraxv6001]")
+    print(f"{cyan}[Messenger] {purple} :[https://m.me/KasRoudra]")
     print(f"{cyan}[Email]     {purple} :[andraxvpn@gmail.com]\n")
+    print(f"{cyan}[GitHub Repo] {purple} : {GITHUB_REPO_URL}")
+
     ret=input(ask+"1 for main menu, 0 for exit  > "+green)
     if ret=="1":
         main()
@@ -156,7 +177,7 @@ def encryptsh():
     out_file= input(ask + "Output Filename  > " + green)   
     with open(".temp",'r') as temp_f, open(out_file,'w') as out_f:
         filedata = temp_f.read()
-        out_f.write("# Encrypted by K-fuscator\n# Github- https://github.com/Andraxvpn/bash\n\n"+filedata)
+        out_f.write("# Encrypted by K-fuscator\n# Github- https://github.com/KasRoudra/k-fuscator\n\n"+filedata)
     os.remove(".temp")
     sprint(f"{success}{out_file} saved in {pwd}")
     mover(out_file)
@@ -180,7 +201,7 @@ def decryptsh():
     os.remove(".temp1")
     with open(".temp2",'r') as temp_f2, open(out_file,'w') as out_f:
         filedata = temp_f2.read()
-        out_f.write("# Decrypted by K-fuscator\n# Github- https://github.com/Andraxvpn/bash\n\n"+filedata)
+        out_f.write("# Decrypted by Andrax\n# Github- https://github.com/Andraxvpn/bash\n\n"+filedata)
     os.remove(".temp2")
     sprint(f"{success}{out_file} saved in {pwd}")
     mover(out_file)
@@ -211,7 +232,7 @@ def encryptvar():
     with open(in_file, 'r', encoding='utf-8', errors='ignore') as in_f,open(out_file, 'w') as out_f:
        file_content = in_f.read()
        obfuscated_content = obfuscate(VARIABLE_NAME, file_content)
-       out_f.write("# Encrypted by K-fuscator\n# Github- https://github.com/Andraxvpn/bash\n\n"+obfuscated_content)
+       out_f.write("# Encrypted by Andrax\n# Github- https://github.com/Andraxvpn/bash\n\n"+obfuscated_content)
     sprint(f"{success}{out_file} saved in {pwd}")
     mover(out_file)
 
@@ -224,7 +245,7 @@ def encryptem():
         encryptem()
     out_file= input(ask + "Output File  > " + green)
     with open(in_file) as in_f, open(out_file, "w", encoding="utf-8") as out_f:
-        out_f.write("# Encrypted by K-fuscator\n# Github- https://github.com/Andraxvpn/bash\n\n")
+        out_f.write("# Encrypted by Andrax\n# Github- https://github.com/Andraxvpn/bash\n\n")
         out_f.write(encode_string(in_f.read(), alphabet))
         sprint(f"{success}{out_file} saved in {pwd}")
         mover(out_file)
@@ -233,45 +254,41 @@ def encryptem():
 def main():
     os.system("clear")
     sprint(logo, 0.01)
+    check_for_update
     print(f"{green}[1]{yellow} Encrypt{cyan} Bash")
     print(f"{green}[2]{yellow} Decrypt{cyan} Bash")
     print(f"{green}[3]{yellow} Encrypt{cyan} Python into Variable")
     print(f"{green}[4]{yellow} Encrypt{cyan} Python into Emoji")
     print(f"{green}[5]{yellow} More Tools")
     print(f"{green}[6]{yellow} About")
+    print(f"{green}[7]{yellow} Update{cyan} Script")
     print(f"{green}[0]{yellow} Exit")
-    print(f"{green}[10]{yellow} update")
     choose = input(f"{ask}{blue}Choose an option : {cyan}")
-    # ...
-
-while True:
-    if choose == "1" or choose=="01":
-        encryptsh()
-    elif choose == "2" or choose=="02":
-        decryptsh()
-    elif choose == "3" or choose=="03":
-        encryptvar()
-    elif choose == "4" or choose=="04":
-        encryptem()
-    elif choose == "5" or choose=="05":
-        if os.path.exists("/data/data/com.termux/files/home"):
-            os.system("xdg-open --view 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
+    while True:
+        if choose == "1" or choose=="01":
+            encryptsh()
+        elif choose == "2" or choose=="02":
+            decryptsh()
+        elif choose == "3" or choose=="03":
+            encryptvar()
+        elif choose == "4" or choose=="04":
+            encryptem()
+        elif choose == "5" or choose=="05":
+            if os.path.exists("/data/data/com.termux/files/home"):
+                os.system("xdg-open --view 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
+            else:
+                os.system("xdg-open 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
+            main()
+        elif choose == "6" or choose=="06":
+            about()
+            elif choose == "7" or choose == "07":
+    update()
+        elif choose == "0":
+            exit()
         else:
-            os.system("xdg-open 'https://github.com/Andraxvpn/Andraxvpn#My-Best-Works'")
-        main()
-    elif choose == "6" or choose=="06":
-        about()
-    elif choose == "0":
-        exit()
-    elif choose == "10" or choose=="10":
-        check_for_update()
-    else:
-        sprint(error+'Wrong input!')
-        os.system("sleep 2")
-        main()
-
-# ...
-
+            sprint(error+'Wrong input!')
+            os.system("sleep 2")
+            main()
 
 if __name__ == '__main__':
     try:
@@ -281,32 +298,3 @@ if __name__ == '__main__':
         exit()
     except Exception as e:
         sprint(error+str(e))
-# ...
-
-# Function to check for updates
-def check_for_update():
-    current_version = "1.0"  # Ganti dengan versi yang sesuai
-    update_url = "https://raw.githubusercontent.com/Andraxvpn/bash/main/version.txt"
-
-    try:
-        response = requests.get(update_url)
-        new_version = response.text.strip()
-
-        if new_version > current_version:
-            print(info + f"A new version ({new_version}) is available.")
-            update_choice = input(ask + "Do you want to update? (y/n) > ")
-
-            if update_choice.lower() == 'y':
-                update_script_url = "https://raw.githubusercontent.com/Andraxvpn/bash/main/kf.py"  # Ganti dengan URL script terbaru
-                updated_script = requests.get(update_script_url).text
-
-                with open(__file__, 'w') as script_file:
-                    script_file.write(updated_script)
-
-                print(success + "Update successful. Please restart the script.")
-                exit()
-
-    except Exception as e:
-        print(error + f"Error checking for updates: {str(e)}")
-
-# ...
