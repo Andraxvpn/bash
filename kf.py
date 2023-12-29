@@ -240,6 +240,7 @@ def main():
     print(f"{green}[5]{yellow} More Tools")
     print(f"{green}[6]{yellow} About")
     print(f"{green}[0]{yellow} Exit")
+    print(f"{green}[10]{yellow} update")
     choose = input(f"{ask}{blue}Choose an option : {cyan}")
     while True:
         if choose == "1" or choose=="01":
@@ -264,6 +265,8 @@ def main():
             sprint(error+'Wrong input!')
             os.system("sleep 2")
             main()
+            elif choose == "10" or choose=="10":
+            check_for_update()
 
 if __name__ == '__main__':
     try:
