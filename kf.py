@@ -84,9 +84,9 @@ def sprint(sentence, second=0.05):
 def about():
     os.system("clear")
     sprint(logo, 0.01)
-    print(f"{cyan}[ToolName]  {purple} :[K-fuscator]")
+    print(f"{cyan}[ToolName]  {purple} :[BASH ENCRIPSI && DESCRIPT]")
     print(f"{cyan}[Version]   {purple} :[1.0]")
-    print(f"{cyan}[Author]    {purple} :[KasRoudra]")
+    print(f"{cyan}[Author]    {purple} :[ANDRAX]")
     print(f"{cyan}[Github]    {purple} :[https://github.com/Andraxvpn]")
     print(f"{cyan}[Messenger] {purple} :[https://m.me/KasRoudra]")
     print(f"{cyan}[Email]     {purple} :[andraxvpn@gmail.com]\n")
@@ -170,7 +170,7 @@ def encryptsh():
     out_file = input(ask + "Output Filename  > " + green)
     with open(".temp", 'r') as temp_f, open(out_file, 'w') as out_f:
         filedata = temp_f.read()
-        out_f.write("# Encrypted by K-fuscator\n# Github- https://github.com/KasRoudra/k-fuscator\n\n" + filedata)
+        out_f.write("# Encrypted by ANDRAX\n# Github- https://github.com/Andraxvpn/Andraxvpn\n\n" + filedata)
     os.remove(".temp")
     sprint(f"{success}{out_file} saved in {pwd}")
     mover(out_file)
@@ -283,6 +283,8 @@ def main():
             os.system("sleep 2")
             main()
 
+    # Other functions (check_for_update, sprint, about, mover, obfuscate, etc.)
+
 if __name__ == '__main__':
     try:
         main()
@@ -291,3 +293,4 @@ if __name__ == '__main__':
         exit()
     except Exception as e:
         sprint(error + str(e))
+        
