@@ -4,7 +4,7 @@
 SCRIPT_DIR="/data/data/com.termux/files/home"
 
 # Ganti dengan URL repositori GitHub Anda
-REPO_URL="https://github.com/Andraxvpn/bash.git"
+REPO_URL="https://github.com/Andraxvpn/bash"
 
 cd "$SCRIPT_DIR" || exit 1
 
