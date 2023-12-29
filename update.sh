@@ -6,7 +6,7 @@ repository="bash"
 branch="main"
 
 # Direktori lokal repositori
-local_directory="/data/data/termux/home/${repository}"
+local_directory="/data/data/com.termux/files/home/${repository}"
 
 # Pindah ke direktori repositori
 cd "${local_directory}" || exit
