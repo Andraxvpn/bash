@@ -20,7 +20,7 @@
 
 ### Or, Use Single Command
 ```
-apt install git python -y && git clone https://github.com/Andraxvpn/bash && cd k-fuscator && bash requirements.sh && python3 kf.py
+apt install git python -y && git clone https://github.com/Andraxvpn/bash && cd bash && bash requirements.sh && python3 kf.py
 ```
 
 ### Features:
