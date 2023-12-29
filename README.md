@@ -11,7 +11,7 @@
 
 ```git clone https://github.com/Andraxvpn/bash```
 
-```cd k-fuscator```
+```cd bash```
 
 ```bash requirements.sh```
 
